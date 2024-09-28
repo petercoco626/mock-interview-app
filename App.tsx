@@ -5,13 +5,43 @@ import { QuestionScreen } from './screens/questions';
 import { InterviewScreen } from './screens/interview';
 import { screenRoute } from './constants/screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { useFonts } from 'expo-font';
+import setDefaultProps from 'react-native-simple-default-props';
+import { Text } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from 'react';
+
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
+const defaultText = {
+  style: [{ fontFamily: 'SUIT-Medium' }],
+};
+
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    SUIT: require('./assets/fonts/SUIT-Medium.otf'),
+    Gmarket: require('./assets/fonts/GmarketSansBold.otf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) return null;
+
+  // setDefaultProps(Text, defaultText);
+
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+      <SafeAreaView
+        style={{ flex: 1 }}
+        onLayout={onLayoutRootView}
+        edges={['top']}
+      >
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{ headerShown: false }}

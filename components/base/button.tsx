@@ -7,13 +7,11 @@ type ButtonSize = 'large' | 'middle' | 'small';
 
 interface ButtonProps extends PressableProps {
   text: string;
-  className?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
 }
 
 export function Button({
-  className = '',
   text,
   variant = 'primary',
   size = 'large',
@@ -72,8 +70,7 @@ export function Button({
       className={clsx(
         defaultButtonStyle,
         styleOnSize[size].button,
-        styleOnVariant[variant].button,
-        className
+        styleOnVariant[variant].button
       )}
     >
       <Text

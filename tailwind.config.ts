@@ -230,6 +230,7 @@ module.exports = {
       },
       fontFamily: {
         SUIT: 'suit',
+        Gmarket: 'Gmarket',
       },
     },
   },

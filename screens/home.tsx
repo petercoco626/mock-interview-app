@@ -4,8 +4,9 @@ import { Modal } from '@/components/base/modal';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import IcPlay from '@/assets/icons/ic-play.svg';
+import { Text } from '@/components/base/text';
 
 export function HomeScreen() {
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
@@ -14,7 +15,10 @@ export function HomeScreen() {
 
   return (
     <View>
-      <Text className="text-system-blue">Home 입니다.</Text>
+      <Text customStyle="text-black text-[40px]" customFont="font-Gmarket">
+        모의 면접 suit
+      </Text>
+      <Text customStyle="text-black text-[40px]">모의 면접 suit</Text>
       <Button
         text="interview로 가기"
         onPress={() => navigation.navigate('interview')}
