@@ -7,7 +7,7 @@ export function HomeScreen() {
 
   return (
     <View>
-      <Text>Home 입니다.</Text>
+      <Text className="text-red-500">Home 입니다.</Text>
       <Button
         title="interview로 가기"
         onPress={() => navigation.navigate('interview')}
