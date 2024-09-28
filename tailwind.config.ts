@@ -10,9 +10,11 @@ module.exports = {
         'system-blue-light': '#DCECFF',
         'system-blue': '#75B4FF',
         'system-green-light': '#00BFBF',
+        'system-green-light-0.15': 'rgba(0, 191, 191, 0.15)',
         'system-green': '#007D7D',
         'system-green-dark': '#005C5C',
         'system-gray': '#CECECE',
+        'white-0.5': 'rgba(255, 255, 255, 0.5)',
       },
       fontSize: {
         xs_thin: [

@@ -1,6 +1,7 @@
+import { Button } from '@/components/base/button';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export function HomeScreen() {
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
@@ -9,11 +10,12 @@ export function HomeScreen() {
     <View>
       <Text className="text-system-blue">Home 입니다.</Text>
       <Button
-        title="interview로 가기"
+        text="interview로 가기"
         onPress={() => navigation.navigate('interview')}
       ></Button>
       <Button
-        title="questions으로 가기"
+        text="questions으로 가기"
+        variant="secondary"
         onPress={() => navigation.navigate('question')}
       ></Button>
     </View>
