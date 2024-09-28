@@ -5,6 +5,7 @@ import { ScreenRouteParamType } from '@/constants/screen';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Text, View } from 'react-native';
+import IcPlay from '@/assets/icons/ic-play.svg';
 
 export function HomeScreen() {
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
@@ -35,6 +36,7 @@ export function HomeScreen() {
           onPress={() => setIsModalOpen(false)}
         ></Button>
       </Modal>
+      <IcPlay width={24} height={24} />
     </View>
   );
 }
