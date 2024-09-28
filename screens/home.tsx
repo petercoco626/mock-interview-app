@@ -1,4 +1,5 @@
 import { Button } from '@/components/base/button';
+import Input from '@/components/base/input';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { Text, View } from 'react-native';
@@ -18,6 +19,7 @@ export function HomeScreen() {
         variant="secondary"
         onPress={() => navigation.navigate('question')}
       ></Button>
+      <Input placeholder="안녕하세요" />
     </View>
   );
 }
