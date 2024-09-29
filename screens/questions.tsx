@@ -1,21 +1,18 @@
-import { ScreenRouteParamType } from '@/constants/screen';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { Button, Text, View } from 'react-native';
+import { GuideOnAddingQuestion } from '@/components/question/guide-on-adding-question';
+import { Header } from '@/components/question/header';
+import { StartInterviewButtonLayout } from '@/components/question/start-interview-button-layout';
+import { View } from 'react-native';
 
 export function QuestionScreen() {
-  const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
-
   return (
-    <View>
-      <Text>Questions 입니다.</Text>
-      <Button
-        title="home 가기"
-        onPress={() => navigation.navigate('home')}
-      ></Button>
-      <Button
-        title="interview으로 가기"
-        onPress={() => navigation.navigate('interview')}
-      ></Button>
+    <View className="w-full h-full">
+      <Header />
+      <View className="px-4 py-6 box-border w-full h-[calc(100%-136px)]">
+        <GuideOnAddingQuestion />
+      </View>
+      <View className="p-4 w-full h-[80px] box-border flex items-center justify-center">
+        <StartInterviewButtonLayout />
+      </View>
     </View>
   );
 }

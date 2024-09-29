@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@/components/base/button';
 import { Modal } from '@/components/base/modal';
 import { Text } from '@/components/base/text';

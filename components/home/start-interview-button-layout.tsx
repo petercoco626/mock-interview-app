@@ -1,5 +1,3 @@
-'use client';
-
 import { useToggle } from '@/hooks/use-toggle';
 import { StartInterviewButton } from '../common/start-interview-button';
 import { NoQuestionDataModal } from './no-question-data-modal';

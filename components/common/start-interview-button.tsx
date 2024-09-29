@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@/components/base/button';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { extractRandomQuestionsFromTotalQuestions } from '@/libs/utils';
