@@ -70,6 +70,8 @@ export function UpdateQuestionModal({
           <TextInput
             placeholder="모의 면접 질문을 적어주세요."
             onChangeText={handleQuestionTitle}
+            placeholderTextColor={'#BBBBBB'}
+            textAlignVertical="top"
             value={questionTitle}
             maxLength={MAX_QUESTION_TEXT_LENGTH}
             multiline={true}

@@ -69,6 +69,8 @@ export function AddQuestionModal({
         <View className="w-full h-[160px] rounded-xl bg-[#EDEDED] p-3">
           <TextInput
             placeholder="모의 면접 질문을 적어주세요."
+            placeholderTextColor={'#BBBBBB'}
+            textAlignVertical="top"
             onChangeText={handleQuestionTitle}
             value={questionTitle}
             maxLength={MAX_QUESTION_TEXT_LENGTH}
