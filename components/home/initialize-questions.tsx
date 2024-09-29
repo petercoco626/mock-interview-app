@@ -1,3 +1,4 @@
+import { removeAsyncStorage } from '@/libs/async-storage';
 import { fetchQuestions } from '@/service/question/fetch-questions';
 import { useQuestionActions } from '@/stores/question';
 import { useEffect } from 'react';
@@ -14,9 +15,13 @@ export function InitializeQuestions() {
       Alert.alert('정보를 가져오는데 실패했어요...! ㅠ');
     }
   };
+  const deleteAllQuestions = async () => {
+    await removeAsyncStorage('questions');
+  };
 
   useEffect(() => {
     getQuestions();
+    // deleteAllQuestions();
   }, []);
 
   return null;

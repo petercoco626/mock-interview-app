@@ -1,15 +1,15 @@
 import { setAsyncStorage } from '@/libs/async-storage';
 import { fetchQuestions } from './fetch-questions';
-import { UpdateQuestionRequest } from '@/types/question';
+import { Question, UpdateQuestionRequest } from '@/types/question';
 
 export async function updateQuestion({
   question: questionsToUpdate,
-}: UpdateQuestionRequest) {
+}: UpdateQuestionRequest): Promise<Question[]> {
   try {
     const { questions } = await fetchQuestions();
 
     const matchedQuestionIdx = questions.findIndex(
-      (question) => question.created_at !== questionsToUpdate.created_at
+      (question) => question.created_at === questionsToUpdate.created_at
     );
 
     if (matchedQuestionIdx === -1) {
@@ -22,6 +22,8 @@ export async function updateQuestion({
     );
 
     await setAsyncStorage('questions', updatedQuestions);
+
+    return updatedQuestions;
   } catch (e) {
     if (e instanceof Error) {
       throw new Error(e.message);

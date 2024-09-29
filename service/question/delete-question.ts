@@ -1,10 +1,10 @@
-import { DeleteQuestionRequest } from '@/types/question';
+import { DeleteQuestionRequest, Question } from '@/types/question';
 import { fetchQuestions } from './fetch-questions';
 import { setAsyncStorage } from '@/libs/async-storage';
 
 export async function deleteQuestion({
   question: questionToDelete,
-}: DeleteQuestionRequest) {
+}: DeleteQuestionRequest): Promise<Question[]> {
   try {
     const { questions } = await fetchQuestions();
 
@@ -13,6 +13,8 @@ export async function deleteQuestion({
     );
 
     await setAsyncStorage('questions', updatedQuestions);
+
+    return updatedQuestions;
   } catch (e) {
     if (e instanceof Error) {
       throw new Error(e.message);
