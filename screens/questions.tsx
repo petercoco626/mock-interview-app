@@ -9,7 +9,7 @@ export function QuestionScreen() {
   const calculatedHeight = height - 136 - 48;
 
   return (
-    <View className="w-full h-full">
+    <View className="w-full h-full bg-white">
       <Header />
       <View
         className="px-4 py-6 box-border w-full"

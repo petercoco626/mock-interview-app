@@ -39,7 +39,7 @@ export function Interview() {
   }
 
   return (
-    <View className="w-full h-full">
+    <View className="w-full h-full bg-white">
       <Header />
       <View
         className="w-full px-4 pt-7 box-border"

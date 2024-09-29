@@ -22,7 +22,7 @@ export function FinishInterview() {
   };
 
   return (
-    <View className="w-full h-full p-4 box-border flex flex-col items-center justify-center gap-y-6">
+    <View className="w-full h-full p-4 box-border flex flex-col items-center justify-center gap-y-6 bg-white">
       <Text customStyle="text-xxxl_bold">
         질문을 모두{'\n'}
         완료했어요!

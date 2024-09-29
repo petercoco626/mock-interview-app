@@ -5,7 +5,7 @@ import { StartInterviewButtonLayout } from '@/components/home/start-interview-bu
 
 export function HomeScreen() {
   return (
-    <View className="w-full h-full p-4 box-border">
+    <View className="w-full h-full p-4 box-border bg-white">
       <View className="w-full h-full flex flex-col items-center justify-center gap-y-6">
         <Text customStyle="text-black text-[40px]" customFont="font-Gmarket">
           모의 면접
