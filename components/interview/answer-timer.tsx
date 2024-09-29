@@ -20,7 +20,7 @@ const configurationOnTimerToReady: ConfigurationOnTimerToReady = {
 
 const configurationOnTimerToAnswer: ConfigurationOnTimerToReady = {
   startTime: 60,
-  finishTime: -11,
+  finishTime: -60 * 10 - 1,
   isTimerOn: false,
 };
 
@@ -164,8 +164,8 @@ function covertTimeToMMSS(time: number) {
 
   const seconds = Math.floor(absTimer % 60);
 
-  return `${minutes > 10 ? minutes : `0${minutes}`}:${
-    seconds > 10 ? seconds : `0${seconds}`
+  return `${minutes >= 10 ? minutes : `0${minutes}`}:${
+    seconds >= 10 ? seconds : `0${seconds}`
   }`;
 }
 
