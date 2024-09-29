@@ -1,9 +1,14 @@
 import { Text } from '@/components/base/text';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { AddQuestionButton } from './add-question-button';
 import { useQuestionStore } from '@/stores/question';
+import { QuestionCard } from './question-card';
 
-export function QuestionList() {
+interface QuestionListProps {
+  questionListHeight: number;
+}
+
+export function QuestionList({ questionListHeight }: QuestionListProps) {
   const questions = useQuestionStore((state) => state.questions);
 
   return (
@@ -15,6 +20,17 @@ export function QuestionList() {
         </Text>
       </View>
       <AddQuestionButton />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        className="mt-4"
+        style={{
+          height: questionListHeight,
+        }}
+      >
+        {questions.map((question, index) => (
+          <QuestionCard key={index} question={question} />
+        ))}
+      </ScrollView>
     </View>
   );
 }

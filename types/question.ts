@@ -1,6 +1,6 @@
 export interface Question {
   created_at: string;
-  question: string;
+  title: string;
 }
 
 export interface FetchQuestionsResponse {

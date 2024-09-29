@@ -1,12 +1,12 @@
 import { setAsyncStorage } from '@/libs/async-storage';
-import { FetchQuestions } from './fetch-questions';
+import { fetchQuestions } from './fetch-questions';
 import { UpdateQuestionRequest } from '@/types/question';
 
-export async function UpdateQuestion({
+export async function updateQuestion({
   question: questionsToUpdate,
 }: UpdateQuestionRequest) {
   try {
-    const { questions } = await FetchQuestions();
+    const { questions } = await fetchQuestions();
 
     const matchedQuestionIdx = questions.findIndex(
       (question) => question.created_at !== questionsToUpdate.created_at

@@ -17,7 +17,7 @@ export function QuestionScreen() {
         style={{ height: calculatedHeight }}
       >
         <GuideOnAddingQuestion />
-        <QuestionList />
+        <QuestionList questionListHeight={calculatedHeight - 56 - 48 - 100} />
       </View>
       <View className="p-4 w-full h-[80px] box-border flex items-center justify-center">
         <StartInterviewButtonLayout />

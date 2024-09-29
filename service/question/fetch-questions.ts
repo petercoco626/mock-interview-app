@@ -1,7 +1,7 @@
 import { getAsyncStorage } from '@/libs/async-storage';
 import { FetchQuestionsResponse, Question } from '@/types/question';
 
-export async function FetchQuestions(): Promise<FetchQuestionsResponse> {
+export async function fetchQuestions(): Promise<FetchQuestionsResponse> {
   try {
     const questions = (await getAsyncStorage('questions')) as Question[] | null;
 

@@ -2,7 +2,7 @@ import { Button } from '@/components/base/button';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { removeAsyncStorage } from '@/libs/async-storage';
 import { extractRandomQuestionsFromTotalQuestions } from '@/libs/utils';
-import { FetchQuestions } from '@/service/question/fetch-questions';
+import { fetchQuestions } from '@/service/question/fetch-questions';
 import { useInterviewActions } from '@/stores/interview';
 import { useQuestionActions, useQuestionStore } from '@/stores/question';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
@@ -34,7 +34,7 @@ export function StartInterviewButton({
 
   const getQuestions = async () => {
     try {
-      const { questions } = await FetchQuestions();
+      const { questions } = await fetchQuestions();
       setQuestions(questions);
     } catch (e) {
       Alert.alert('정보를 가져오는데 실패했어요...! ㅠ');

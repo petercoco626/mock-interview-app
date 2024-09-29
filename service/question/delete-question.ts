@@ -1,12 +1,12 @@
 import { DeleteQuestionRequest } from '@/types/question';
-import { FetchQuestions } from './fetch-questions';
+import { fetchQuestions } from './fetch-questions';
 import { setAsyncStorage } from '@/libs/async-storage';
 
-export async function DeleteQuestion({
+export async function deleteQuestion({
   question: questionToDelete,
 }: DeleteQuestionRequest) {
   try {
-    const { questions } = await FetchQuestions();
+    const { questions } = await fetchQuestions();
 
     const updatedQuestions = questions.filter(
       (question) => question.created_at !== questionToDelete.created_at

@@ -1,12 +1,12 @@
 import { setAsyncStorage } from '@/libs/async-storage';
 import { CreateQuestionRequest } from '@/types/question';
-import { FetchQuestions } from './fetch-questions';
+import { fetchQuestions } from './fetch-questions';
 
-export async function CreateQuestion({
+export async function createQuestion({
   question,
 }: CreateQuestionRequest): Promise<void> {
   try {
-    const { questions } = await FetchQuestions();
+    const { questions } = await fetchQuestions();
 
     await setAsyncStorage('questions', [...questions, question]);
   } catch (e) {
