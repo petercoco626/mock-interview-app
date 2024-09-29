@@ -14,7 +14,8 @@ export function Interview() {
 
   const { height } = Dimensions.get('window');
 
-  const calculatedHeight = height - 136 - 28;
+  // TODO : 계산식이 이게 맞는지 ? = box-border라는 개념이 있는지?
+  const calculatedHeight = height - 136 - 16;
 
   const selectedQuestions = useInterviewStore(
     (state) => state.selectedQuestions

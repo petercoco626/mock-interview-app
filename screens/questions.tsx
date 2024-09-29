@@ -6,7 +6,7 @@ import { Dimensions, View } from 'react-native';
 export function QuestionScreen() {
   const { height } = Dimensions.get('window');
 
-  const calculatedHeight = height - 136 - 48;
+  const calculatedHeight = height - 136 - 16;
 
   return (
     <View className="w-full h-full bg-white">
