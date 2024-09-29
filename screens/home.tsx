@@ -3,15 +3,27 @@ import Input from '@/components/base/input';
 import { Modal } from '@/components/base/modal';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import IcPlay from '@/assets/icons/ic-play.svg';
 import { Text } from '@/components/base/text';
+import { getAsyncStorage, setAsyncStorage } from '@/libs/async-storage';
 
 export function HomeScreen() {
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [count, setCount] = useState(0);
+
+  const getQuestions = async () => {
+    const questions = await getAsyncStorage('questions');
+    console.log(questions);
+  };
+
+  useEffect(() => {
+    getQuestions();
+  }, [count]);
 
   return (
     <View>
@@ -21,14 +33,14 @@ export function HomeScreen() {
       <Text customStyle="text-black text-[40px]">모의 면접 suit</Text>
       <Button
         text="interview로 가기"
-        onPress={() => navigation.navigate('interview')}
+        onPress={async () => {
+          await setAsyncStorage('questions', {
+            title: 'fdsf',
+          });
+          setCount((pre) => pre + 1);
+        }}
       ></Button>
-      <Button
-        text="questions으로 가기"
-        variant="secondary"
-        onPress={() => navigation.navigate('question')}
-      ></Button>
-      <Input placeholder="안녕하세요" />
+
       <Button
         text="modal open"
         variant="secondary"
