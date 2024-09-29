@@ -15,6 +15,7 @@ module.exports = {
         'system-green-dark': '#005C5C',
         'system-gray': '#CECECE',
         'white-0.5': 'rgba(255, 255, 255, 0.5)',
+        'modal-background': 'rgba(0, 0, 0, 0.6)',
       },
       fontSize: {
         xs_thin: [

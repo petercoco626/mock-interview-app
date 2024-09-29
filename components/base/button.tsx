@@ -9,12 +9,14 @@ interface ButtonProps extends PressableProps {
   text: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  customStyle?: string;
 }
 
 export function Button({
   text,
   variant = 'primary',
   size = 'large',
+  customStyle = '',
   ...props
 }: ButtonProps) {
   const defaultButtonStyle =
@@ -70,7 +72,8 @@ export function Button({
       className={clsx(
         defaultButtonStyle,
         styleOnSize[size].button,
-        styleOnVariant[variant].button
+        styleOnVariant[variant].button,
+        customStyle
       )}
     >
       <Text

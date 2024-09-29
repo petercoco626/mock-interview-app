@@ -13,7 +13,7 @@ export function Modal({ isModalOpen, children }: ModalProps) {
       transparent={true}
       visible={isModalOpen}
     >
-      <View className="w-full h-full bg-[rgba(0, 0, 0, 0.6)] flex flex-row items-center justify-center">
+      <View className="w-full h-full bg-modal-background flex flex-row items-center justify-center">
         {children}
       </View>
     </ReactNativeModal>
