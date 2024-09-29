@@ -12,6 +12,7 @@
       "@/libs/*": ["libs/*"],
       "@/screens/*": ["screens/*"],
       "@/service/*": ["service/*"],
+      "@/stores/*": ["stores/*"],
       "@/types/*": ["types/*"]
     }
   }

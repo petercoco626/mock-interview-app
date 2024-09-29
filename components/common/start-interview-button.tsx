@@ -1,6 +1,8 @@
 import { Button } from '@/components/base/button';
 import { ScreenRouteParamType } from '@/constants/screen';
 import { extractRandomQuestionsFromTotalQuestions } from '@/libs/utils';
+import { useInterviewActions } from '@/stores/interview';
+import { useQuestionStore } from '@/stores/question';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 interface StartInterviewButtonProps {
@@ -9,13 +11,17 @@ interface StartInterviewButtonProps {
 export function StartInterviewButton({
   onClickCallback,
 }: StartInterviewButtonProps) {
-  const questions: string[] = [];
-
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
+
+  const questions = useQuestionStore((state) => state.questions);
+
+  const { setSelectedQuestions } = useInterviewActions();
 
   const onStartInterview = () => {
     const extractedQuestions =
       extractRandomQuestionsFromTotalQuestions(questions);
+
+    setSelectedQuestions(extractedQuestions);
 
     navigation.navigate('interview');
   };

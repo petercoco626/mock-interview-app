@@ -32,6 +32,7 @@ module.exports = function (api) {
             '@/libs': './libs',
             '@/screens': './screens',
             '@/service': './service',
+            '@/stores': './stores',
             '@/types': './types',
           },
         },
