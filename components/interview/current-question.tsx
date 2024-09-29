@@ -17,7 +17,7 @@ export function CurrentQuestion() {
         Q
       </Text>
       <Text customStyle="text-m_medium text-[#333333] text-center break-keep">
-        {selectedQuestions[currentQuestionIdx]}
+        {selectedQuestions[currentQuestionIdx].title}
       </Text>
     </View>
   );

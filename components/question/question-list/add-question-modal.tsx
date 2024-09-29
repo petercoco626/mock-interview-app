@@ -26,7 +26,12 @@ export function AddQuestionModal({
   const { createQuestion: createQuestionInStore } = useQuestionActions();
 
   const handleSaveQuestion = async () => {
-    const createdAt = '';
+    if (questionTitle.length === 0) {
+      Alert.alert('1글자 이상을 입력해주세요 !');
+      return;
+    }
+
+    const createdAt = new Date().toISOString();
 
     const newQuestion: Question = {
       created_at: createdAt,
@@ -37,7 +42,11 @@ export function AddQuestionModal({
       await createQuestion({
         question: newQuestion,
       });
+
       createQuestionInStore(newQuestion);
+
+      setQuestionTitle('');
+
       onCloseModal();
     } catch (e) {
       Alert.alert('질문 저장에 실패했습니다 ㅠ');

@@ -8,7 +8,7 @@ export async function createQuestion({
   try {
     const { questions } = await fetchQuestions();
 
-    await setAsyncStorage('questions', [...questions, question]);
+    await setAsyncStorage('questions', [question, ...questions]);
   } catch (e) {
     if (e instanceof Error) {
       throw new Error(e.message);

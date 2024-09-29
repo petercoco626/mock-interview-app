@@ -1,6 +1,5 @@
 import { Button } from '@/components/base/button';
 import { ScreenRouteParamType } from '@/constants/screen';
-import { removeAsyncStorage } from '@/libs/async-storage';
 import { extractRandomQuestionsFromTotalQuestions } from '@/libs/utils';
 import { fetchQuestions } from '@/service/question/fetch-questions';
 import { useInterviewActions } from '@/stores/interview';
