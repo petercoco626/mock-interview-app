@@ -34,7 +34,10 @@ export function NoQuestionDataModal({
           />
           <Button
             customStyle="flex flex-1"
-            onPress={() => navigation.navigate('question')}
+            onPress={() => {
+              navigation.navigate('question');
+              onCloseModal();
+            }}
             text="질문 추가"
           />
         </View>

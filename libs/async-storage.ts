@@ -25,7 +25,7 @@ export const setAsyncStorage = async <T>(key: storageKeyType, value: T) => {
 export const removeAsyncStorage = async (key: storageKeyType) => {
   try {
     await AsyncStorage.removeItem(key);
-  } catch (e: any) {
+  } catch (e) {
     throw new Error('error remove storage key');
   }
 };

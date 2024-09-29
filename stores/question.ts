@@ -1,20 +1,21 @@
 import { MockQuestions } from '@/constants/mock-questions';
+import { Question } from '@/types/question';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 interface QuestionState {
-  questions: string[];
+  questions: Question[];
   actions: {
-    setQuestions: (questions: string[]) => void;
+    setQuestions: (questions: Question[]) => void;
   };
 }
 
 export const useQuestionStore = create<QuestionState>()(
   devtools(
     (set) => ({
-      questions: MockQuestions,
+      questions: [],
       actions: {
-        setQuestions: (questions: string[]) => set(() => ({ questions })),
+        setQuestions: (questions: Question[]) => set(() => ({ questions })),
       },
     }),
     { name: 'question-store', enabled: process.env.NODE_ENV === 'development' }

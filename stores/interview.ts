@@ -1,11 +1,12 @@
+import { Question } from '@/types/question';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 interface InterviewState {
-  selectedQuestions: string[];
+  selectedQuestions: Question[];
   currentQuestionIdx: number;
   actions: {
-    setSelectedQuestions: (questions: string[]) => void;
+    setSelectedQuestions: (questions: Question[]) => void;
     nextQuestion: () => void;
     previewQuestion: () => void;
     resetStore: () => void;
@@ -18,7 +19,7 @@ export const useInterviewStore = create<InterviewState>()(
       selectedQuestions: [],
       currentQuestionIdx: 0,
       actions: {
-        setSelectedQuestions: (questions: string[]) =>
+        setSelectedQuestions: (questions: Question[]) =>
           set(() => ({ selectedQuestions: questions, currentQuestionIdx: 0 })),
         nextQuestion: () =>
           set((pre) => ({

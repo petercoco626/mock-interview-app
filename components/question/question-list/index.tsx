@@ -1,0 +1,20 @@
+import { Text } from '@/components/base/text';
+import { View } from 'react-native';
+import { AddQuestionButton } from './add-question-button';
+import { useQuestionStore } from '@/stores/question';
+
+export function QuestionList() {
+  const questions = useQuestionStore((state) => state.questions);
+
+  return (
+    <View className="mt-[22px]">
+      <View className="flex flex-row items-center mb-4">
+        <Text customStyle="text-xl_bold mr-1">질문 리스트</Text>
+        <Text customStyle="text-sm_bold text-[#999999]">
+          {questions.length}/100
+        </Text>
+      </View>
+      <AddQuestionButton />
+    </View>
+  );
+}

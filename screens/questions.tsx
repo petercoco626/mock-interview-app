@@ -1,5 +1,6 @@
 import { GuideOnAddingQuestion } from '@/components/question/guide-on-adding-question';
 import { Header } from '@/components/question/header';
+import { QuestionList } from '@/components/question/question-list';
 import { StartInterviewButtonLayout } from '@/components/question/start-interview-button-layout';
 import { Dimensions, View } from 'react-native';
 
@@ -16,6 +17,7 @@ export function QuestionScreen() {
         style={{ height: calculatedHeight }}
       >
         <GuideOnAddingQuestion />
+        <QuestionList />
       </View>
       <View className="p-4 w-full h-[80px] box-border flex items-center justify-center">
         <StartInterviewButtonLayout />

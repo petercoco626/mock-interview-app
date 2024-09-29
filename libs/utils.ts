@@ -1,5 +1,7 @@
+import { Question } from '@/types/question';
+
 // Fisher-Yates 알고리즘?
-function shuffle(array: string[]): string[] {
+function shuffle<T>(array: T[]): T[] {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]]; // 이렇게도 표현할 수 있네?
@@ -8,7 +10,7 @@ function shuffle(array: string[]): string[] {
 }
 
 export function extractRandomQuestionsFromTotalQuestions(
-  totalQuestions: string[]
+  totalQuestions: Question[]
 ) {
   if (totalQuestions.length > 10) {
     // 배열 크기가 10 이상이면 10개의 요소를 랜덤으로 선택
