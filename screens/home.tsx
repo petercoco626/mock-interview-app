@@ -2,6 +2,7 @@ import { View } from 'react-native';
 import { Text } from '@/components/base/text';
 import { RouteQuestionPageButton } from '@/components/home/route-question-page-button';
 import { StartInterviewButtonLayout } from '@/components/home/start-interview-button-layout';
+import { InitializeQuestions } from '@/components/home/initialize-questions';
 
 export function HomeScreen() {
   return (
@@ -16,6 +17,7 @@ export function HomeScreen() {
           <RouteQuestionPageButton />
         </View>
       </View>
+      <InitializeQuestions />
     </View>
   );
 }
