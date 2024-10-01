@@ -4,8 +4,9 @@ import { useQuestionStore } from '@/stores/question';
 import { extractRandomQuestionsFromTotalQuestions } from '@/libs/utils';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { ScreenRouteParamType } from '@/constants/screen';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { Text } from '../base/text';
+import ImgFinishInterview from '@/assets/images/img-finish-interview.gif';
 
 export function FinishInterview() {
   const navigation = useNavigation<NavigationProp<ScreenRouteParamType>>();
@@ -22,13 +23,13 @@ export function FinishInterview() {
   };
 
   return (
-    <View className="w-full h-full p-4 box-border flex flex-col items-center justify-center gap-y-6 bg-white">
-      <Text customStyle="text-xxxl_bold">
+    <View className="w-full h-full p-4 box-border flex flex-col items-center justify-center bg-white">
+      <Text customStyle="text-xxxl_bold mb-6">
         질문을 모두{'\n'}
         완료했어요!
       </Text>
-      <View className="w-[180px] h-[180px] bg-system-gray" />
-      <View className="space-y-2 w-full">
+      <Image className="w-[180px] h-[180px]" source={ImgFinishInterview} />
+      <View className="space-y-2 w-full mt-6">
         <Button
           onPress={onRestartInterview}
           customStyle="w-full"

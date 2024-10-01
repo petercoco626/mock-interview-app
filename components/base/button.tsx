@@ -57,7 +57,7 @@ export function Button({
     },
     secondary: {
       button:
-        'border-system-green-light active:bg-system-green-light-0.15 disabled:border-system-gray',
+        'border-system-green-light bg-white active:bg-system-green-light-0.15 disabled:border-system-gray',
       text: 'text-system-green-light disabled:text-system-gray',
     },
     text: {
