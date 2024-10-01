@@ -1,3 +1,4 @@
+import { EventProvider } from 'react-native-outside-press';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from './screens/home';
@@ -36,29 +37,31 @@ export default function App() {
   // setDefaultProps(Text, defaultText);
 
   return (
-    <SafeAreaProvider>
-      <SafeAreaView
-        style={{ flex: 1 }}
-        onLayout={onLayoutRootView}
-        edges={['top']}
-      >
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-            initialRouteName={screenRoute.HOME}
-          >
-            <Stack.Screen name={screenRoute.HOME} component={HomeScreen} />
-            <Stack.Screen
-              name={screenRoute.QUESTION}
-              component={QuestionScreen}
-            />
-            <Stack.Screen
-              name={screenRoute.INTERVIEW}
-              component={InterviewScreen}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <EventProvider>
+      <SafeAreaProvider>
+        <SafeAreaView
+          style={{ flex: 1 }}
+          onLayout={onLayoutRootView}
+          edges={['top']}
+        >
+          <NavigationContainer>
+            <Stack.Navigator
+              screenOptions={{ headerShown: false }}
+              initialRouteName={screenRoute.HOME}
+            >
+              <Stack.Screen name={screenRoute.HOME} component={HomeScreen} />
+              <Stack.Screen
+                name={screenRoute.QUESTION}
+                component={QuestionScreen}
+              />
+              <Stack.Screen
+                name={screenRoute.INTERVIEW}
+                component={InterviewScreen}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </EventProvider>
   );
 }

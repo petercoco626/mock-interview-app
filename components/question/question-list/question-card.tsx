@@ -7,6 +7,7 @@ import { UpdateQuestionModal } from './update-question-modal';
 import { deleteQuestion } from '@/service/question/delete-question';
 import { useQuestionActions } from '@/stores/question';
 import clsx from 'clsx';
+import OutsidePressHandler from 'react-native-outside-press';
 
 interface QuestionCardProps {
   question: Question;
@@ -28,13 +29,22 @@ export function QuestionCard({ question }: QuestionCardProps) {
           'relative'
         )}
       >
-        <Text customStyle="text-m_bold text-[#99999]">Q</Text>
-        <Text customStyle="text-[#333333]">{question.title}</Text>
+        <View className="flex flex-row items-start">
+          <Text customStyle="text-m_bold text-[#99999] mr-2">Q</Text>
+          <Text customStyle="text-s_medium text-[#333333] w-[80%]">
+            {question.title}
+          </Text>
+        </View>
         <Pressable onPress={openSubMenuList}>
           <IcThreeDots />
         </Pressable>
         {isSubMenuListOpen && (
-          <SubMenuList question={question} onCloseSubMenu={closeSubMenuList} />
+          <OutsidePressHandler onOutsidePress={closeSubMenuList}>
+            <SubMenuList
+              question={question}
+              onCloseSubMenu={closeSubMenuList}
+            />
+          </OutsidePressHandler>
         )}
       </View>
     </>
