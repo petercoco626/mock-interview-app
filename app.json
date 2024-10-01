@@ -12,7 +12,8 @@
       "backgroundColor": "#00BFBF"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mockInterveiw"
     },
     "android": {
       "adaptiveIcon": {
