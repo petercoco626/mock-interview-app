@@ -81,7 +81,19 @@ function SubMenuList({
 
   return (
     <>
-      <View className={clsx('p-3 bg-white space-y-2 rounded-xl')}>
+      <View
+        className={clsx('p-3 bg-white space-y-2 rounded-xl')}
+        style={{
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+          elevation: 5,
+        }}
+      >
         <Pressable onPress={openUpdateQuestionModal} className="w-14">
           <Text customStyle="text-m_bold text-[#666666]">수정</Text>
         </Pressable>
