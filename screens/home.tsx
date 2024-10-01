@@ -1,8 +1,9 @@
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { Text } from '@/components/base/text';
 import { RouteQuestionPageButton } from '@/components/home/route-question-page-button';
 import { StartInterviewButtonLayout } from '@/components/home/start-interview-button-layout';
 import { InitializeQuestions } from '@/components/home/initialize-questions';
+import ImgScore from '@/assets/images/img-score.png';
 
 export function HomeScreen() {
   return (
@@ -11,7 +12,7 @@ export function HomeScreen() {
         <Text customStyle="text-black text-[40px]" customFont="font-Gmarket">
           모의 면접
         </Text>
-        <View className="w-[180px] h-[180px] bg-red-300" />
+        <Image className="w-[180px] h-[180px] bg-red-300" source={ImgScore} />
         <View className="w-full">
           <StartInterviewButtonLayout />
           <RouteQuestionPageButton />
