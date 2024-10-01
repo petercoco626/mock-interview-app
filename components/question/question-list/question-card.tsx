@@ -21,33 +21,34 @@ export function QuestionCard({ question }: QuestionCardProps) {
   } = useToggle();
 
   return (
-    <>
-      <View
-        className={clsx(
-          'w-full p-3 rounded-xl bg-[#EDEDED] mb-3',
-          'flex flex-row justify-between items-start',
-          'relative'
-        )}
-      >
-        <View className="flex flex-row items-start">
-          <Text customStyle="text-m_bold text-[#99999] mr-2">Q</Text>
-          <Text customStyle="text-s_medium text-[#333333] w-[80%]">
-            {question.title}
-          </Text>
-        </View>
-        <Pressable onPress={openSubMenuList}>
-          <IcThreeDots />
-        </Pressable>
-        {isSubMenuListOpen && (
-          <OutsidePressHandler onOutsidePress={closeSubMenuList}>
-            <SubMenuList
-              question={question}
-              onCloseSubMenu={closeSubMenuList}
-            />
-          </OutsidePressHandler>
-        )}
+    <View
+      className={clsx(
+        'w-full p-3 rounded-xl bg-[#EDEDED] mb-3',
+        'flex flex-row justify-between items-start',
+        'relative'
+      )}
+      style={{
+        zIndex: isSubMenuListOpen ? 1 : 0,
+      }}
+    >
+      <View className="flex flex-row items-start">
+        <Text customStyle="text-m_bold text-[#999999] mr-2">Q</Text>
+        <Text customStyle="text-s_medium text-[#333333] w-[80%]">
+          {question.title}
+        </Text>
       </View>
-    </>
+      <Pressable onPress={openSubMenuList}>
+        <IcThreeDots />
+      </Pressable>
+      {isSubMenuListOpen && (
+        <OutsidePressHandler
+          onOutsidePress={closeSubMenuList}
+          className={clsx('absolute top-8 right-[14px]')}
+        >
+          <SubMenuList question={question} onCloseSubMenu={closeSubMenuList} />
+        </OutsidePressHandler>
+      )}
+    </View>
   );
 }
 
@@ -80,15 +81,7 @@ function SubMenuList({
 
   return (
     <>
-      <View
-        className={clsx(
-          'p-3 bg-white space-y-2 rounded-xl',
-          'absolute top-0 right-[14px]'
-        )}
-        style={{
-          zIndex: 100,
-        }}
-      >
+      <View className={clsx('p-3 bg-white space-y-2 rounded-xl')}>
         <Pressable onPress={openUpdateQuestionModal} className="w-14">
           <Text customStyle="text-m_bold text-[#666666]">수정</Text>
         </Pressable>
