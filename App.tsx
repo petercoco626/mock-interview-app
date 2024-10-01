@@ -8,7 +8,7 @@ import { screenRoute } from './constants/screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import setDefaultProps from 'react-native-simple-default-props';
-import { Text } from 'react-native';
+import { StatusBar, Text } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 
@@ -39,6 +39,7 @@ export default function App() {
   return (
     <EventProvider>
       <SafeAreaProvider>
+        <StatusBar barStyle="default" />
         <SafeAreaView
           style={{ flex: 1 }}
           onLayout={onLayoutRootView}
