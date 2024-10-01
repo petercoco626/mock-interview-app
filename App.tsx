@@ -7,8 +7,7 @@ import { InterviewScreen } from './screens/interview';
 import { screenRoute } from './constants/screen';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
-import setDefaultProps from 'react-native-simple-default-props';
-import { StatusBar, Text } from 'react-native';
+import { StatusBar } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 
@@ -16,13 +15,12 @@ SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
-const defaultText = {
-  style: [{ fontFamily: 'SUIT-Medium' }],
-};
-
 export default function App() {
   const [fontsLoaded] = useFonts({
-    SUIT: require('./assets/fonts/SUIT-Medium.otf'),
+    SUIT_Thin: require('./assets/fonts/SUIT-Thin.otf'),
+    SUIT_Medium: require('./assets/fonts/SUIT-Medium.otf'),
+    SUIT_Bold: require('./assets/fonts/SUIT-Bold.otf'),
+    SUIT_ExtraBold: require('./assets/fonts/SUIT-ExtraBold.otf'),
     Gmarket: require('./assets/fonts/GmarketSansBold.otf'),
   });
 
@@ -34,12 +32,10 @@ export default function App() {
 
   if (!fontsLoaded) return null;
 
-  // setDefaultProps(Text, defaultText);
-
   return (
     <EventProvider>
       <SafeAreaProvider>
-        <StatusBar barStyle="default" />
+        <StatusBar barStyle="dark-content" />
         <SafeAreaView
           style={{ flex: 1 }}
           onLayout={onLayoutRootView}

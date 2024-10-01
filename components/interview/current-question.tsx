@@ -13,7 +13,10 @@ export function CurrentQuestion() {
 
   return (
     <View className="bg-[#DAF3F3] w-full p-3 rounded-xl mt-4">
-      <Text customStyle="text-xxxl_bold text-system-green-light text-center mb-2">
+      <Text
+        customStyle="text-xxxl_bold text-system-green-light text-center mb-2"
+        customFont="font-SUIT_Bold"
+      >
         Q
       </Text>
       <Text customStyle="text-m_medium text-[#333333] text-center break-keep">

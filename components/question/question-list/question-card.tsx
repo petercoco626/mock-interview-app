@@ -32,7 +32,12 @@ export function QuestionCard({ question }: QuestionCardProps) {
       }}
     >
       <View className="flex flex-row items-start">
-        <Text customStyle="text-m_bold text-[#999999] mr-2">Q</Text>
+        <Text
+          customStyle="text-m_bold text-[#999999] mr-2"
+          customFont="font-SUIT_Bold"
+        >
+          Q
+        </Text>
         <Text customStyle="text-s_medium text-[#333333] w-[80%]">
           {question.title}
         </Text>
@@ -95,10 +100,20 @@ function SubMenuList({
         }}
       >
         <Pressable onPress={openUpdateQuestionModal} className="w-14">
-          <Text customStyle="text-m_bold text-[#666666]">수정</Text>
+          <Text
+            customStyle="text-m_bold text-[#666666]"
+            customFont="font-SUIT_Bold"
+          >
+            수정
+          </Text>
         </Pressable>
         <Pressable onPress={handleDeleteQuestion} className="w-14">
-          <Text customStyle="text-m_bold text-[#FF685F]">삭제</Text>
+          <Text
+            customStyle="text-m_bold text-[#FF685F]"
+            customFont="font-SUIT_Bold"
+          >
+            삭제
+          </Text>
         </Pressable>
       </View>
       {isUpdateQuestionModalOpen && (

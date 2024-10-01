@@ -3,7 +3,12 @@ import { ReactNode } from 'react';
 import { Text as ReactNativeText } from 'react-native';
 
 interface TextProps {
-  customFont?: string;
+  customFont?:
+    | 'font-SUIT_Thin'
+    | 'font-SUIT_Medium'
+    | 'font-SUIT_Bold'
+    | 'font-SUIT_ExtraBold'
+    | 'font-Gmarket';
   customStyle: string;
   children: ReactNode;
 }
@@ -11,7 +16,7 @@ interface TextProps {
 export function Text({
   children,
   customStyle,
-  customFont = 'font-SUIT',
+  customFont = 'font-SUIT_Medium',
 }: TextProps) {
   return (
     <ReactNativeText className={clsx(customStyle, customFont)}>
@@ -19,3 +24,5 @@ export function Text({
     </ReactNativeText>
   );
 }
+
+//

@@ -24,9 +24,8 @@ export function FinishInterview() {
 
   return (
     <View className="w-full h-full p-4 box-border flex flex-col items-center justify-center bg-white">
-      <Text customStyle="text-xxxl_bold mb-6">
-        질문을 모두{'\n'}
-        완료했어요!
+      <Text customStyle="text-[40px] font-bold mb-6" customFont="font-Gmarket">
+        면접 완료!
       </Text>
       <Image className="w-[180px] h-[180px]" source={ImgFinishInterview} />
       <View className="space-y-2 w-full mt-6">

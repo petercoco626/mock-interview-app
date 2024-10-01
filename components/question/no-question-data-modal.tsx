@@ -18,10 +18,10 @@ export function NoQuestionDataModal({
         <View className="w-[259px] h-[85px] flex flex-row items-center justify-center">
           <Text customStyle="text-m_medium text-center">
             등록된 질문이 없습니다.{'\n'}
-            질문을 먼저 등록해주세요.
+            질문을 먼저 등록해 주세요.
           </Text>
         </View>
-        <Button customStyle="w-full" onPress={onCloseModal} text="질문 추가" />
+        <Button customStyle="w-full" onPress={onCloseModal} text="확인" />
       </View>
     </Modal>
   );

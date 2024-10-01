@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { Text, Pressable, PressableProps, StyleSheet } from 'react-native';
+import { Pressable, PressableProps } from 'react-native';
+import { Text } from './text';
 
 type ButtonVariant = 'primary' | 'secondary' | 'text';
 
@@ -31,15 +32,15 @@ export function Button({
   > = {
     large: {
       button: 'h-12',
-      text: 'text-m_medium ',
+      text: 'text-m_bold ',
     },
     middle: {
       button: 'h-10',
-      text: 'text-s_medium ',
+      text: 'text-s_bold ',
     },
     small: {
       button: 'h-8',
-      text: 'text-xs_medium ',
+      text: 'text-xs_bold ',
     },
   };
 
@@ -77,7 +78,8 @@ export function Button({
       )}
     >
       <Text
-        className={clsx(styleOnSize[size].text, styleOnVariant[variant].text)}
+        customStyle={clsx(styleOnSize[size].text, styleOnVariant[variant].text)}
+        customFont="font-SUIT_Bold"
       >
         {text}
       </Text>

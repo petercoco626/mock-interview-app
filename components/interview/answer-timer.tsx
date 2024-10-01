@@ -83,9 +83,12 @@ export function AnswerTimer() {
     return (
       <View className="flex flex-col items-center gap-y-2 w-full rounded-lg bg-[#EDEDED] p-3 box-border">
         <Text customStyle="text-m_medium text-[#333333] text-center">
-          준비하세요
+          준비하세요.
         </Text>
-        <Text customStyle="text-center text-[#666666] text-xxxl_bold">
+        <Text
+          customStyle="text-center text-[#666666] text-xxxl_bold"
+          customFont="font-SUIT_Bold"
+        >
           {covertTimeToMMSS(timeToReady)}
         </Text>
         <View className="w-full flex flex-row justify-center">
@@ -123,7 +126,7 @@ export function AnswerTimer() {
         )}
       >
         <Text customStyle="text-m_medium text-[#333333] text-center">
-          답변해주세요
+          답변해 주세요.
         </Text>
         <Text
           customStyle={clsx(

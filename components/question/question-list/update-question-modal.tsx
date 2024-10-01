@@ -65,7 +65,9 @@ export function UpdateQuestionModal({
           width: calculatedWidth,
         }}
       >
-        <Text customStyle="text-l_bold">질문작성</Text>
+        <Text customStyle="text-l_bold" customFont="font-SUIT_Bold">
+          질문 작성
+        </Text>
         <View className="w-full h-[160px] rounded-xl bg-[#EDEDED] p-3">
           <TextInput
             placeholder="모의 면접 질문을 적어주세요."
@@ -75,10 +77,13 @@ export function UpdateQuestionModal({
             value={questionTitle}
             maxLength={MAX_QUESTION_TEXT_LENGTH}
             multiline={true}
-            className="w-full h-[120px] text-m_medium box-border"
+            className="w-full h-[120px] text-m_medium box-border font-SUIT_Medium"
           />
           <View className="flex flex-row justify-end">
-            <Text customStyle="text-xs_bold text-[#999999]">
+            <Text
+              customStyle="text-xs_bold text-[#999999]"
+              customFont="font-SUIT_Bold"
+            >
               {questionTitle.length}/{MAX_QUESTION_TEXT_LENGTH}
             </Text>
           </View>
