@@ -13,7 +13,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.mockInterveiw"
+      "bundleIdentifier": "com.mockInterview"
     },
     "android": {
       "adaptiveIcon": {
