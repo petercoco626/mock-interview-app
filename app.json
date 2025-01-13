@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mock-interview-app",
+    "name": "모의 면접",
     "slug": "mock-interview-app",
     "version": "1.0.1",
     "orientation": "portrait",
@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.mockInterview",
-      "buildNumber": "2"
+      "buildNumber": "3"
     },
     "android": {
       "adaptiveIcon": {
