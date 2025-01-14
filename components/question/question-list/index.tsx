@@ -33,7 +33,11 @@ export function QuestionList({ questionListHeight }: QuestionListProps) {
         }}
       >
         {questions.map((question, index) => (
-          <QuestionCard key={index} question={question} />
+          <QuestionCard
+            key={index}
+            question={question}
+            isLastIndex={questions.length - 1 === index}
+          />
         ))}
       </ScrollView>
     </View>

@@ -8,12 +8,14 @@ import { deleteQuestion } from '@/service/question/delete-question';
 import { useQuestionActions } from '@/stores/question';
 import clsx from 'clsx';
 import OutsidePressHandler from 'react-native-outside-press';
+import { Fragment } from 'react';
 
 interface QuestionCardProps {
   question: Question;
+  isLastIndex: boolean;
 }
 
-export function QuestionCard({ question }: QuestionCardProps) {
+export function QuestionCard({ question, isLastIndex }: QuestionCardProps) {
   const {
     toggle: isSubMenuListOpen,
     handleToggleOn: openSubMenuList,
@@ -23,9 +25,10 @@ export function QuestionCard({ question }: QuestionCardProps) {
   return (
     <View
       className={clsx(
-        'w-full p-3 rounded-xl bg-[#EDEDED] mb-3',
+        'w-full p-3 rounded-xl bg-[#EDEDED]',
         'flex flex-row justify-between items-start',
-        'relative'
+        'relative',
+        isLastIndex ? 'mb-16' : 'mb-3'
       )}
       style={{
         zIndex: isSubMenuListOpen ? 1 : 0,
@@ -85,7 +88,7 @@ function SubMenuList({
   };
 
   return (
-    <>
+    <Fragment>
       <View
         className={clsx('p-3 bg-white space-y-2 rounded-xl')}
         style={{
@@ -126,6 +129,6 @@ function SubMenuList({
           selectedQuestion={question}
         />
       )}
-    </>
+    </Fragment>
   );
 }
