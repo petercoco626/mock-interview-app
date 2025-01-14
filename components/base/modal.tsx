@@ -1,5 +1,10 @@
 import { ReactNode } from 'react';
-import { Modal as ReactNativeModal, View } from 'react-native';
+import {
+  Modal as ReactNativeModal,
+  View,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 
 interface ModalProps {
   isModalOpen: boolean;
@@ -13,9 +18,11 @@ export function Modal({ isModalOpen, children }: ModalProps) {
       transparent={true}
       visible={isModalOpen}
     >
-      <View className="w-full h-full bg-modal-background flex flex-row items-center justify-center">
-        {children}
-      </View>
+      <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding' })}>
+        <View className="w-full h-full bg-modal-background flex flex-row items-center justify-center">
+          {children}
+        </View>
+      </KeyboardAvoidingView>
     </ReactNativeModal>
   );
 }
