@@ -1,4 +1,4 @@
-import { ScrollView, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { useQuestionStore } from '@/stores/question';
 import { QuestionCard } from './question-card';
 
@@ -12,7 +12,7 @@ export function QuestionList() {
     >
       {questions.map((question, index) => (
         <QuestionCard
-          key={index}
+          key={question.created_at}
           question={question}
           isLastIndex={questions.length - 1 === index}
         />

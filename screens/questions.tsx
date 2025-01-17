@@ -5,7 +5,6 @@ import { QuestionList } from '@/components/question/question-list';
 import { AddQuestionButton } from '@/components/question/question-list/add-question-button';
 import { StartInterviewButtonLayout } from '@/components/question/start-interview-button-layout';
 import { useQuestionStore } from '@/stores/question';
-import clsx from 'clsx';
 import { View } from 'react-native';
 
 export function QuestionScreen() {
