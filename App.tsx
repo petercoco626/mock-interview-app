@@ -39,7 +39,7 @@ export default function App() {
         <SafeAreaView
           style={{ flex: 1 }}
           onLayout={onLayoutRootView}
-          edges={['top']}
+          edges={['top', 'bottom']}
         >
           <NavigationContainer>
             <Stack.Navigator

@@ -14,8 +14,8 @@ export function Interview() {
 
   const { height } = Dimensions.get('window');
 
-  // TODO : 계산식이 이게 맞는지 ? = box-border라는 개념이 있는지?
-  const calculatedHeight = height - 136 - 16;
+  // // TODO : 계산식이 이게 맞는지 ? = box-border라는 개념이 있는지?
+  // const calculatedHeight = height - 136 - 16;
 
   const selectedQuestions = useInterviewStore(
     (state) => state.selectedQuestions
@@ -40,14 +40,13 @@ export function Interview() {
   }
 
   return (
-    <View className="w-full h-full bg-white">
-      <Header />
-      <View
-        className="w-full px-4 pt-7 box-border"
-        style={{ height: calculatedHeight }}
-      >
-        <AnswerTimer />
-        <CurrentQuestion />
+    <View className="w-full h-full bg-white flex flex-col justify-between pb-5">
+      <View>
+        <Header />
+        <View className="w-full px-4 pt-7 box-border">
+          <AnswerTimer />
+          <CurrentQuestion />
+        </View>
       </View>
       <QuestionIdxController />
     </View>
