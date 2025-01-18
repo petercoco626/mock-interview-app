@@ -28,7 +28,7 @@ export function QuestionCard({ question, isLastIndex }: QuestionCardProps) {
         'w-full p-3 rounded-xl bg-[#EDEDED]',
         'flex flex-row justify-between items-start',
         'relative',
-        isLastIndex ? 'mb-16' : 'mb-3'
+        isLastIndex ? 'mb-[90px]' : 'mb-3'
       )}
       style={{
         zIndex: isSubMenuListOpen ? 1 : 0,
