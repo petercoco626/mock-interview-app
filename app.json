@@ -21,7 +21,8 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.petercoco626.mockinterviewapp"
+      "package": "com.petercoco626.mockinterviewapp",
+      "versionCode": 7
     },
     "web": {
       "favicon": "./assets/icon.png"
@@ -31,6 +32,18 @@
         "projectId": "4ab5fe65-f336-4ebd-afc7-215d3b199491"
       }
     },
-    "owner": "petercoco626"
+    "owner": "petercoco626",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "targetSdkVersion": 35,
+            "compileSdkVersion": 35
+          }
+        }
+      ],
+      "expo-font"
+    ]
   }
 }
